@@ -284,6 +284,16 @@ class TestCredentials(unittest.TestCase):
                         print("\n")
                         print("Bye, have a good day 🚀.....")
 
+                        break
+
+                    else:
+                        print("\n")
+                        print(f""" Invalid entry please check amd try again. what is the the {short_code}? 
+                        please use the short codes """)
+                        print("\n")
+                        
+
+
                         
 
 
