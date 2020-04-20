@@ -94,7 +94,7 @@ class Credentials:
         """
         method that deletes credentials account that user no longder needs
         """
-        Credentials.credentials_list.remove(self)
+        Credentials.credentials_name.remove(self)
 
     # paste with pyperclip
     @classmethod

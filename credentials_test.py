@@ -254,6 +254,19 @@ class TestCredentials(unittest.TestCase):
                                     print(f"Credentials for {credentials_name} have been created and saved 📁")
                                     print("\n")
 
+                                elif short_code == "dlc":
+                                    """
+                                    deleting credentials that are no longer needed
+                                    """
+                                    print{"enter name of credentials you no longer need"}
+
+                                    delete_credentials = input()
+                                    if check_credentials_exists(delete_credentials):
+                                        delete_credentials = find_credentials(delete_credentials)
+                                        print(f"{delete_credentials.user_name} {delete_credentials.user_password}")
+                                        print(f"The credentials {user_name} {credentials_name} has been deleted 🚮")
+
+
                                 elif short_code == "ext":
                                     print(f"Thank you {user_name} for using password locker. see you soon 👋")
                                     print("\n")
