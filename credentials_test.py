@@ -155,7 +155,18 @@ class TestCredentials(unittest.TestCase):
                         print("Enter the password")
                         user_password = input()
 
-                        if
+                        if user_log_in( user_name,user_password) == None:
+                            print("\n")
+                            print("invalid user name or password, try again or create a new account")
+                            print("\n")
+
+                        else:
+
+                            user_log_in(user_name,user_password)
+                            print("\n")
+                            print(f""" {user_name} You have successfully loged to you =r credentials \n 
+                            use the following short codes to navigate""")
+
     
 
 
