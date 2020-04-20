@@ -141,7 +141,7 @@ class TestCredentials(unittest.TestCase):
                         save_users( create_user( user_name, user_password))
 
                         print("\n")
-                        print(f"Welcome {user_name} to Password Locker")
+                        print(f"Welcome {user_name} to Password Locker 😇")
 
                     elif short short_code == "du":
                         """
@@ -152,7 +152,12 @@ class TestCredentials(unittest.TestCase):
                             print("Below ere the current user of password locker")
                             print(print"-"*10)
 
-                            for user in disp
+                            for user in display_users():
+                                print(f"{user.user_name}")
+                                print("-"*10)
+                        else:
+                            print("\n")
+                            print("password locker does not have a user yet. \n  Be the first user 🎉 ")
 
 
                     elif short_code == "lg":
@@ -160,7 +165,7 @@ class TestCredentials(unittest.TestCase):
                         code to allow user log into password locker
                         """
                         print("\n")
-                        print("Log into your Password Locker Account")
+                        print("Log into your Password Locker Account 🎨")
                         print("Enter the user name")
                         user_name = input()
 
@@ -169,7 +174,7 @@ class TestCredentials(unittest.TestCase):
 
                         if user_log_in( user_name,user_password) == None:
                             print("\n")
-                            print("invalid user name or password, try again or create a new account")
+                            print("🚫 invalid user name or password, try again or create a new account")
                             print("\n")
 
                         else:
