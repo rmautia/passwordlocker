@@ -34,7 +34,76 @@ class User:
 
     def save_user(self):
         """
-        way of saving a user to the user list
+        saving a user to the user list
         """
         User.user_list.append(self)
+
+    #finding a user's credentials
+    @classmethod
+    def find_credentials (cls, name ):
+        """
+        checks correct importation
+        
+        Args:
+            name: credentials name
+        
+        Returns:
+            Boolean : True / False depending on if the credential exists or not
+        """
+        
+        #to search in the user list
+        for credentials in credentials.credentials_list:
+            if credentials.credentials_name == name:
+                return True
+        
+        return False
+
+    @classmethod 
+    def log_in(cls, name, password):
+        """
+        method for user to log into their accounts
+
+        Args:
+            name : name of user
+            password : password for the user
+
+        Returns: 
+            credentials list if name of user matches name of password
+            False: if the name or password incorrect
+        """
+
+        # search for the user list 
+        for user in cls.user_list:
+            if user.user_namr == name and user.user_password == password:
+                return Credntials.credentials_list
+
+        return False
+
+    @classmethod
+    def display_user(cls):
+        """
+        method that returns the user list 
+        """
+
+        return cls.user_list
+
+    @classmethod
+    def user_exist(cls, name):
+        """
+        method that checks if a user exists in the user list
+        Args:
+            name: name of the user to search 
+        
+        Returns:
+            Boolean: true/false depending on whether  user exists
+        """
+
+        for user in cls.user_list:
+            if user.user_name == name:
+                return True
+                
+        return False
+
+
+    
 

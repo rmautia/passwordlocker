@@ -58,4 +58,21 @@ class Credentials:
 
         return password
 
-    # method to diplay the credentials
+    # method to display the credentials
+    @classmethod
+    def display_credentials(cls, password):
+        """
+        method that will return the credentials list
+
+        Args:
+            password  : the user password
+        """
+        user_credentials_list = []
+        
+        for credentials in cls.credentials_list:
+            if credentials.user_password == password:
+                user_credentials_list.append(credential)
+
+        return user_credentials_list
+
+    @
