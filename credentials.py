@@ -1,14 +1,7 @@
-"""
-credentials Module 
-
-To generate passwords from python, import string and random modules 
-
-import user from user module to get access to user 
-"""
-
+import unittest
 from random import choice 
 import string 
-from user import User 
+#from user import User 
 
 """
 credentials class to create instances of the user's credentials 
@@ -75,4 +68,23 @@ class Credentials:
 
         return user_credentials_list
 
-    @
+    @classmethod
+    def credentials_exist(cls, name):
+        """
+        method to check existense of a credentials
+        
+        Args
+            name: name of credentials to be searched
+        
+        Returns:
+            Boolean: true/ false subject to whether the credentials exist
+        """
+
+        for credentials in cls.credentials_list:
+            if credentials.credentials_name == name:
+                return True 
+
+        return False 
+
+if __name__ == '__main__':
+    unittest.main()

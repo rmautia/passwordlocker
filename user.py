@@ -1,16 +1,6 @@
-"""
-User Module
 
-import credentials from credentials 
 
-import pyperclip to allow copying to the clipboard
-"""
-
-from credentials import Credentials
-
-"""
-User class to allow users creat a password locker account
-"""
+#from credentials import Credentials # impoting the credentials class 
 
 class User:
     """
@@ -101,8 +91,12 @@ class User:
         for user in cls.user_list:
             if user.user_name == name:
                 return True
-                
+
         return False
+
+    
+if __name__ == '__main__':
+    unittest.main()
 
 
     
