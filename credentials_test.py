@@ -205,6 +205,18 @@ class TestCredentials(unittest.TestCase):
                                     print("New Credentials")
                                     print("-"*10)
 
+                                    print("Name of the credentials ...")
+                                    credentials_name = input()
+
+                                    print("Password of the credentials ...")
+                                    credentials_password = input()
+
+                                    # creating and saving a new user
+                                    save_credentials ( create_credentials(user_password, credentials_name, Credentials_email, credentials_password))
+
+                                    print("\n")
+                                    print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
+
 
 
 
