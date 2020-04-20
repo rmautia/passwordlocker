@@ -151,7 +151,7 @@ def main():
             save_users( create_user( user_name, user_password))
 
             print("\n")
-            print(f"Welcome {user_name} to Password Locker 😇")
+            print(f"Welcome {user_name} to Password Locker 😇🥳")
 
         elif short_code == "du":
             """
@@ -159,7 +159,7 @@ def main():
             """
             if display_users():
                 print("\n")
-                print("Below ere the current user of password locker")
+                print("Below is the list of current users of password locker 👇")
                 print("-"*10)
 
                 for user in display_users():
@@ -192,8 +192,8 @@ def main():
 
                 user_log_in(user_name,user_password)
                 print("\n")
-                print(f""" {user_name} You have successfully loged to you =r credentials \n 
-                use the following short codes to navigate""")
+                print(f"""Welcome {user_name} You have successfully logged into your credentials 🔑🔓  \n 
+                use the following short codes to navigate 🚣‍♀️""")
 
                 while True:
                     """

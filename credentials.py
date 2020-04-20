@@ -106,6 +106,6 @@ class Credentials:
         pyperclip.copy(credentials_name.credentials_email)
 
 
-    
+
 if __name__ == '__main__':
     unittest.main()

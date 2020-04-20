@@ -66,7 +66,7 @@ class User:
         # search for the user list 
         for user in cls.user_list:
             if user.user_name == name and user.user_password == password:
-                return credentials.credentials_list
+                return Credentials.credentials_list
 
         return False
 
@@ -79,7 +79,7 @@ class User:
         return cls.user_list
 
     @classmethod
-    def user_exist(cls, name):
+    def user_exists(cls, name):
         """
         method that checks if a user exists in the user list
         Args:
