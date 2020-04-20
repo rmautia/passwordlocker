@@ -106,17 +106,42 @@ class TestCredentials(unittest.TestCase):
     # main function
     def main():
         """
-        Function to run the password locker app in cli
+        Function to run the password locker app
         """
-        print("""Hello Welcome to Password Locker app \n
-        use these short codes to get around """)
-            while  True:
-                """
-                a loop that will run the entire application
-                """
-                print(""" short codes:
-                cu - create a password locker account \n
-                du - display  """)
+
+        print("Hello Welcome to your passwordlocker \n use this short codes to get around")
+
+        while True:
+            """
+            loop that is running the entire epplication 
+            """
+                    print ("""Short codes:
+                    cu - create a password Locker account \n
+                    du - display names of current password locker users \n
+                    lg - log into your account on password locker \n
+                    dlc - delete a password locker account you no longer need \n
+                    ex - exit the password locker account """)
+
+                    # taking short codes from the user
+                    short_code = input().lower()
+
+                    if short_code == "cu":
+                        
+                        print("\n")
+                        print(" New password locker account")
+                        print ("-"*10)
+
+                        print("User name ...")
+                        user_name = input()
+
+                        print("password ...")
+                        user_password = input()
+
+                        #creating a new user and saving
+                        save_users( create_user( user_name, user_password))
+
+                        print("\n")
+                        print(f"Welcome {user_name} to Password Locker")
     
 
 
