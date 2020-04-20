@@ -208,9 +208,12 @@ class TestCredentials(unittest.TestCase):
                                     print("Name of the credentials ...")
                                     credentials_name = input()
 
+                                    print("Email link of the credentials ...")
+                                    Credentials_email = input()
+
                                     print("Password of the credentials ...")
                                     credentials_password = input()
-
+                
                                     # creating and saving a new user
                                     save_credentials ( create_credentials(user_password, credentials_name, Credentials_email, credentials_password))
 
@@ -254,6 +257,15 @@ class TestCredentials(unittest.TestCase):
                                     print(f"Credentials for {credentials_name} have been created and saved 📁")
                                     print("\n")
 
+                                elif short_code = "ce":
+                                    print("Enter credentials email you wish to copy")
+
+                                    copy_credentials_email = input()
+                                    if check_credentials_exists(copy_credentials_email):
+                                        copy_credentials_email = find_credentials(copy_credentials_email)
+                                        print(f"{copy_credentials_email.Credentials_email}")
+                                        print(f"{Credentials_email} has been copied 📋")
+
                                 elif short_code == "dlc":
                                     """
                                     deleting credentials that are no longer needed
@@ -291,7 +303,7 @@ class TestCredentials(unittest.TestCase):
                         print(f""" Invalid entry please check amd try again. what is the the {short_code}? 
                         please use the short codes """)
                         print("\n")
-                        
+
 
 
                         
