@@ -1,5 +1,5 @@
-
-
+import unittest
+import pyperclip
 #from credentials import Credentials # impoting the credentials class 
 
 class User:
@@ -48,6 +48,7 @@ class User:
         
         return False
 
+    
     @classmethod 
     def log_in(cls, name, password):
         """
@@ -64,7 +65,7 @@ class User:
 
         # search for the user list 
         for user in cls.user_list:
-            if user.user_namr == name and user.user_password == password:
+            if user.user_name == name and user.user_password == password:
                 return Credntials.credentials_list
 
         return False
@@ -94,7 +95,7 @@ class User:
 
         return False
 
-    
+        
 if __name__ == '__main__':
     unittest.main()
 

@@ -15,22 +15,24 @@ class Credentials:
     # start 
     credentials_list = [] # Empty list of the credentials
 
-    def __init__(self, user_password, credentials_name, credentials_password):
+    def __init__(self, user_password, credentials_name,credentials_email, credentials_password):
         """
         __init__ method to  specify the attributes of a User object
         
         Args:
             user_password = user password
             credentials_name = the name of the credentials acccount
+            credentials_email = the email of the credentials account to be linked with the account
             credentials_password = the password of the account
         """
         self.user_password = user_password
         self.credentials_name = credentials_name
+        self.credentials_email = credentials_email
         self.credentials_password = credentials_password
 
     def save_credentials(self):
         """
-        methos thriugh wich the application saves the user credentials to credentials list
+        method through which the application saves the user credentials to credentials list
         """
         credentials.credentials_list.append(self)
         
@@ -57,7 +59,7 @@ class Credentials:
         """
         method that will return the credentials list
 
-        Args:
+        Args:credentials_email = the email of the credentials account to be linked with the account
             password  : the user password
         """
         user_credentials_list = []
@@ -86,5 +88,24 @@ class Credentials:
 
         return False 
 
+    # deleting credentials
+    @classmethod
+    def delete_credentials(self):
+        """
+        method that deletes credentials account that user no longder needs
+        """
+        Credentials.credentials_list.remove(self)
+
+    # paste with pyperclip
+    @classmethod
+    def copy_credentials_email(self):
+        """
+        method to copy credentials email to the clipboard
+        """
+        credentials_name = credentials.credentials_exists()
+        pyperclip.copy(credentials_name.credentials_email)
+
+
+    
 if __name__ == '__main__':
     unittest.main()

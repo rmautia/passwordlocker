@@ -1,6 +1,7 @@
 import unittest # Importing the unittest module
 from credentials import Credentials # Importing the Credentials  class
 
+
 class TestCredentials(unittest.TestCase):
     """
     class for test that defines test cases for the credentials module
@@ -13,7 +14,7 @@ class TestCredentials(unittest.TestCase):
         set up method will run before each test case
         """
         # creating the credential object
-        self.new_credentials = credentials("pete","gmail","gmail08")
+        self.new_credentials = credentials("pete","gmail","yahoo","gmail08")
 
     def tearDown(self):
         """
@@ -27,6 +28,7 @@ class TestCredentials(unittest.TestCase):
         """
         self.assertEqual( self.new_credentials.user_password, "pete")
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
+        self.assertEqual( self.new_credentials.Credentials_email, "yahoo")
         self.assertEqual( self.new_credentials.credentials.credentials_password, "gmail08")
 
     def test_save_credentials(self):
@@ -55,11 +57,11 @@ class TestCredentials(unittest.TestCase):
         #saving the new credentials 
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("john", "outlook", "outlook12")
+        test_credentials = Credentials("john", "outlook","yahoo", "outlook12")
 
         test_credentials.save_credentials()
 
-        test_credentials = Credentials("john", "glassdoor","glassy05")
+        test_credentials = Credentials("john", "glassdoor","yahoo","glassy05")
 
         test_credentials.save_credentials()
 
@@ -72,7 +74,7 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("john","outlook","outlook12")
+        test_credentials = Credentials("john","outlook","yahoo","outlook12") # new credentials
 
         test_credentials.save_credentials()
 
@@ -80,6 +82,43 @@ class TestCredentials(unittest.TestCase):
         credentials_exists = Credentials.credentials_exists("outlook")
 
         self.assertTrue(credentials_exists)
+
+    # deleting a credentials account
+    def test_delete_credentials():
+        """
+        this method enables user to remove credentils the he/she no longer needs
+        """
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("john","outlook","yahoo","outlook12") #new credentials
+        test_credentials.save_credentials
+
+        self.new_credentials.delete_credentials() #deleting credentials account
+        self.assertEqual( len(Credentials.credentials_list,),1)
+
+    #pyperclip function to copy email
+    def test_copy_credentials_email():
+        """
+        function that copy email address from a found credentials
+        """
+        return Credentials.copy_credentials_email()
+
+    # main function
+    def main():
+        """
+        Function to run the password locker app in cli
+        """
+        print("""Hello Welcome to Password Locker app \n
+        use these short codes to get around """)
+            while  True:
+                """
+                a loop that will run the entire application
+                """
+                print(""" short codes:
+                cu - create a password locker account \n
+                du - display  """)
+    
+
 
     if __name__ == '__main__':
         unittest.main(verbosity=2)
