@@ -1,6 +1,6 @@
 import unittest
 import pyperclip
-#from credentials import Credentials # impoting the credentials class 
+from credentials import Credentials # impoting the credentials class 
 
 class User:
     """
@@ -19,7 +19,7 @@ class User:
             user_password : the user's password
         '''
 
-        self.user_name = first_name
+        self.user_name = user_name
         self.user_password = user_password
 
     def save_user(self):
@@ -66,7 +66,7 @@ class User:
         # search for the user list 
         for user in cls.user_list:
             if user.user_name == name and user.user_password == password:
-                return Credntials.credentials_list
+                return credentials.credentials_list
 
         return False
 
