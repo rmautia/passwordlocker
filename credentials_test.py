@@ -143,6 +143,18 @@ class TestCredentials(unittest.TestCase):
                         print("\n")
                         print(f"Welcome {user_name} to Password Locker")
 
+                    elif short short_code == "du":
+                        """
+                        show names of present user
+                        """
+                        if display_users():
+                            print("\n")
+                            print("Below ere the current user of password locker")
+                            print(print"-"*10)
+
+                            for user in disp
+
+
                     elif short_code == "lg":
                         """
                         code to allow user log into password locker
@@ -166,6 +178,13 @@ class TestCredentials(unittest.TestCase):
                             print("\n")
                             print(f""" {user_name} You have successfully loged to you =r credentials \n 
                             use the following short codes to navigate""")
+
+                            while True:
+                                """
+                                loop for running functions post log-in
+                                """
+                                print(""" Short codes:
+                                cc - add a credential  """)
 
     
 
