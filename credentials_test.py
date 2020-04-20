@@ -216,6 +216,26 @@ class TestCredentials(unittest.TestCase):
 
                                     print("\n")
                                     print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
+                                    print("\n")
+
+                                elif short_code == "dc":
+                                    """
+                                    displaying credential name & password
+                                    """
+                                    if display_credentials(user_password):
+                                        print("\n")
+                                        print(f"{user_name}\'s credentials")
+                                        print("-"*10)
+
+                                        for credential in display_credentials(user_password):
+                                            print(f"Account ..... {credentials.credentials_name}")
+                                            print(f"Password .... {credentials.credentials_password}")
+                                            print("-"*10)
+
+                                    else:
+                                        print("\n")
+                                        print("Sorry You do not have any credentials 😟 ")
+                                        print("\n")
 
 
 
