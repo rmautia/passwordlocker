@@ -158,6 +158,7 @@ class TestCredentials(unittest.TestCase):
                         else:
                             print("\n")
                             print("password locker does not have a user yet. \n  Be the first user 🎉 ")
+                            print("\n")
 
 
                     elif short_code == "lg":
@@ -189,7 +190,23 @@ class TestCredentials(unittest.TestCase):
                                 loop for running functions post log-in
                                 """
                                 print(""" Short codes:
-                                cc - add a credential  """)
+                                cc - add credentials  \n
+                                dc - display credentials \n
+                                gc - generate a credentials with autogenerate password \n
+                                ce - copy email of existing credentials \n
+                                dlc - delete credentials \n
+                                ext - exit credentials """)
+
+
+                                # get short codes from user
+
+                                if short_code == "cc":
+                                    print("\n")
+                                    print("New Credentials")
+                                    print("-"*10)
+
+
+
 
     
 
