@@ -265,6 +265,11 @@ class TestCredentials(unittest.TestCase):
                                     please use the short codes provided""")
                                     print("\n")
                     elif short_code == "ex":
+                        """
+                        Exiting password locker
+                        """
+                        print("\n")
+                        print("Bye, have a good day 🚀.....")
 
                         
 
