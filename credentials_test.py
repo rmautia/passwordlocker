@@ -254,6 +254,20 @@ class TestCredentials(unittest.TestCase):
                                     print(f"Credentials for {credentials_name} have been created and saved 📁")
                                     print("\n")
 
+                                elif short_code == "ext":
+                                    print(f"Thank you {user_name} for using password locker. see you soon 👋")
+                                    print("\n")
+                                    break
+
+                                else:
+                                    print("\n")
+                                    print(f""" {short_code} seems to be incorrect 😬. \n 
+                                    please use the short codes provided""")
+                                    print("\n")
+                    elif short_code == "ex":
+
+                        
+
 
 
 
