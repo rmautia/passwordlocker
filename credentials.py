@@ -8,7 +8,7 @@ import user from user module to get access to user
 
 from random import choice 
 import string 
-# from user import User 
+from user import User 
 
 """
 credentials class to create instances of the user's credentials 
@@ -34,3 +34,28 @@ class Credentials:
         self.user_password = user_password
         self.credentials_name = credentials_name
         self.credentials_password = credentials_password
+
+    def save_credentials(self):
+        """
+        methos thriugh wich the application saves the user credentials to credentials list
+        """
+        credentials.credentials_list.append(self)
+        
+    #generating password for the user 
+    @classmethod
+    def generate_password(cls):
+        """
+        this method will generate a random alphanumeric password for the user 
+        """
+        #length of password to be generated 
+        size = 10
+        
+        # random alphanumeric generation
+        alphanumeric = string.ascii_lowercase + string.digits + string.ascii_uppercase
+
+        #now to create the password
+        password = "".join( choice(alphanumeric) for num in range(size))
+
+        return password
+
+    # method to diplay the credentials

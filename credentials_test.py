@@ -1,5 +1,5 @@
 """
-test Module for password locker application
+Test Module for password locker application
 
 impoor unittest to create unittests for the application 
 import the module to be tested from passwordlocker, in this case the credentials module
@@ -35,4 +35,3 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual( self.new_credentials.user_password, "pete")
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
         self.assertEqual( self.new_credentials.credentials.credentials_password, "gmail08")
-        
