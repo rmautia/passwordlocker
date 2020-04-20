@@ -142,6 +142,20 @@ class TestCredentials(unittest.TestCase):
 
                         print("\n")
                         print(f"Welcome {user_name} to Password Locker")
+
+                    elif short_code == "lg":
+                        """
+                        code to allow user log into password locker
+                        """
+                        print("\n")
+                        print("Log into your Password Locker Account")
+                        print("Enter the user name")
+                        user_name = input()
+
+                        print("Enter the password")
+                        user_password = input()
+
+                        if
     
 
 
