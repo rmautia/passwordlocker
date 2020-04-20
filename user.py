@@ -6,7 +6,7 @@ import credentials from credentials
 import pyperclip to allow copying to the clipboard
 """
 
-import credentials from credentials
+from credentials import Credentials
 
 """
 User class to allow users creat a password locker account
@@ -18,7 +18,7 @@ class User:
     """
 
     # start 
-    contact_list = [] # Empty user list 
+    user_list = [] # Empty user list 
     def __init__(self,user_name,user_password):
 
         '''
