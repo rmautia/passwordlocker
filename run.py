@@ -112,6 +112,13 @@ def create_generated_password(name):
     password = Credentials.generated_password()
 
     return password
+
+def find_credentials(credentials_name, credentials_password):
+    """
+    function to fund credentials based on credentials name given
+    """
+    return Credentials.find_credentials(credentials_name, credentials_password)
+    
 def delete_credentials(name):
     """"
     Function to delete credentials no longer required
@@ -277,12 +284,17 @@ def main():
                         deleting credentials that are no longer needed
                         """
                         print("enter name of credentials you no longer need")
-                        delete_credentials = input()
+                        credentials_name = input()
 
-                        if check_existing_credentials(delete_credentials):
-                            delete_credentials = check_existing_credentials(delete_credentials)
-                            print(f" {delete_credentials(credentials_name)}")
+                        print("enter password of credentials above")
+                        credentials_password = input()
+
+                        if check_existing_credentials(credentials_name):
+                            delete_credentials_name = find_credentials(credentials_name, credentials_password)
+                            print(f" {delete_credentials_name}")
                             print(f"The credentials {credentials_name} has been deleted permanently🚮")
+                        else:
+                            print(" ⚠️ That credentials does not exist ⚠️ ")
 
 
                     elif short_code == "ext":

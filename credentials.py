@@ -24,7 +24,7 @@ class Credentials:
             credentials_name = the name of the credentials acccount
             credentials_password = the password of the account
         """
-        self.user_password = user_name
+        self.user_name = user_name
         self.credentials_name = credentials_name
         self.credentials_password = credentials_password
 
@@ -53,7 +53,7 @@ class Credentials:
 
     # method to display the credentials
     @classmethod
-    def display_credentials(cls, password):
+    def display_credentials(cls, user_name):
         """
         method that will return the credentials list
 
@@ -63,13 +63,13 @@ class Credentials:
         user_credentials_list = []
         
         for credentials in cls.credentials_list:
-            if credentials.user_password == password:
+            if credentials.user_name == user_name:
                 user_credentials_list.append(credentials)
 
         return user_credentials_list
 
     @classmethod
-    def credentials_exists(cls, name):
+    def credentials_exists(cls, credentials_name):
         """
         method to check existense of a credentials
         
@@ -81,18 +81,36 @@ class Credentials:
         """
 
         for credentials in cls.credentials_list:
-            if credentials.credentials_name == name:
+            if credentials.credentials_name == credentials_name:
                 return True 
 
         return False 
 
+    #method to find credentials
+    @classmethod
+    def find_credentials(cls, credentials_name, credentials_password):
+        """
+        method that takes in credentials name and returns the credentials entry saved.
+
+        Args
+            name: is the name of the platform e.g facebook that a user has saved in the application
+        Returns :
+            credentials name and password that matches the input given.
+        """
+
+        for credentials in cls.credentials_list:
+            if credentials_name == credentials_name and credentials_password == credentials_password:
+                return credentials
+
     # deleting credentials
     @classmethod
-    def delete_credentials(self):
+    def delete_credentials(credentials_name, credentials_password):
         """
         method that deletes credentials account that user no longder needs
         """
-        Credentials.credentials_list.remove(self)
+        Credentials.credentials_list.remove()
+
+pass 
 
     
 

@@ -82,18 +82,20 @@ class TestCredentials(unittest.TestCase):
 
         self.assertTrue(credentials_exists)
 
-    # deleting a credentials account
-    def test_delete_credentials(self):
+    def test_find_credentials(self):
         """
-        this method enables user to remove credentils the he/she no longer needs
+        test to check if we can find credentials by name and display information
         """
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Test","outlook","outlook12") #new credentials
+        test_credentials = Credentials ("aaron","gmail","fecebook20") #new credentials
         test_credentials.save_credentials()
 
-        self.new_credentials.delete_credentials() #deleting credentials account
-        self.assertEqual( len(Credentials.credentials_list),1)
+        found_credentials = Credentials.find_credentials("gmail", "fecebook")
+
+        self.assertEqual(found_credentials.credentials_name, test_credentials.credentials_name)
+
+    
 
         
 if __name__ == '__main__':
