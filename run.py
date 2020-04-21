@@ -200,20 +200,24 @@ def main():
                     loop for running functions post log-in
                     """
                     print(""" Short codes:
-                    cc - add credentials  \n
-                    dc - display credentials \n
-                    gc - generate a credentials with autogenerate password \n
-                    ce - copy email of existing credentials \n
-                    dlc - delete credentials \n
-                    ext - exit credentials """)
+        cc - add credentials  \n
+        dc - display credentials \n
+        gc - generate a credentials with autogenerate password \n
+        ce - copy email of existing credentials \n
+        dlc - delete credentials \n
+        ext - exit credentials """)
 
 
                     # get short codes from user
+                    short_code = input().lower()
 
                     if short_code == "cc":
                         print("\n")
                         print("New Credentials")
                         print("-"*10)
+
+                        print("User password ...")
+                        user_password = input()
 
                         print("Name of the credentials ...")
                         credentials_name = input()
@@ -240,7 +244,7 @@ def main():
                             print(f"{user_name}\'s credentials")
                             print("-"*10)
 
-                            for credential in display_credentials(user_password):
+                            for credentials in display_credentials(user_password):
                                 print(f"Account ..... {credentials.credentials_name}")
                                 print(f"Password .... {credentials.credentials_password}")
                                 print("-"*10)
@@ -266,16 +270,7 @@ def main():
                         print("\n")
                         print(f"Credentials for {credentials_name} have been created and saved 📁")
                         print("\n")
-
-                    elif short_code == "ce":
-                        print("Enter credentials email you wish to copy")
-
-                        copy_credentials_email = input()
-                        if check_credentials_exists(copy_credentials_email):
-                            copy_credentials_email = find_credentials(copy_credentials_email)
-                            print(f"{copy_credentials_email.Credentials_email}")
-                            print(f"{Credentials_email} has been copied 📋")
-
+                  
                     elif short_code == "dlc":
                         """
                         deleting credentials that are no longer needed
