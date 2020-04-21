@@ -207,11 +207,11 @@ def main():
                     loop for running functions post log-in
                     """
                     print(""" Short codes:
-        cc - add credentials  \n
-        dc - display credentials \n
-        gc - generate a credentials with autogenerate password \n
-        dlc - delete credentials \n
-        ext - exit credentials """)
+                    cc - add credentials  \n
+                    dc - display credentials \n
+                    gc - generate a credentials with autogenerate password \n
+                    dlc - delete credentials \n
+                    ext - exit credentials """)
 
 
                     # get short codes from user
@@ -222,7 +222,7 @@ def main():
                         print("New Credentials")
                         print("-"*10)
 
-                        print("User password ...")
+                        print("User Name ...")
                         user_name = input()
 
                         print("Name of the credentials ...")
@@ -235,19 +235,19 @@ def main():
                         save_credentials (create_credentails(user_name, credentials_name, credentials_password) )
 
                         print("\n")
-                        print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
+                        print(f"Credentials for {user_name} have been recorded and saved 🏆")
                         print("\n")
 
                     elif short_code == "dc":
                         """
                         displaying credential name & password
                         """
-                        if display_credentials(user_password):
+                        if display_credentials(user_name):
                             print("\n")
                             print(f"{user_name}\'s credentials")
                             print("-"*10)
 
-                            for credentials in display_credentials(user_password):
+                            for credentials in display_credentials(user_name):
                                 print(f"Account ..... {credentials.credentials_name}")
                                 print(f"Password .... {credentials.credentials_password}")
                                 print("-"*10)
@@ -280,10 +280,10 @@ def main():
                         deleting credentials that are no longer needed
                         """
                         print("enter name of credentials you no longer need")
-
                         delete_credentials = input()
+
                         if check_existing_credentials(delete_credentials):
-                            delete_credentials = credentials_exists(delete_credentials)
+                            delete_credentials = check_existing_credentials(delete_credentials)
                             print(f"{delete_credentials.user_name} {delete_credentials.credentials_name}")
                             print(f"The credentials {credentials_name} has been deleted permanently🚮")
 
