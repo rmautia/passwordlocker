@@ -222,9 +222,6 @@ def main():
                         print("New Credentials")
                         print("-"*10)
 
-                        print("User Name ...")
-                        user_name = input()
-
                         print("Name of the credentials ...")
                         credentials_name = input()
 
@@ -235,7 +232,7 @@ def main():
                         save_credentials (create_credentails(user_name, credentials_name, credentials_password) )
 
                         print("\n")
-                        print(f"Credentials for {user_name} have been recorded and saved 🏆")
+                        print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
                         print("\n")
 
                     elif short_code == "dc":
@@ -270,7 +267,7 @@ def main():
 
 
                         # Save created credential with its generated password
-                        save_credentials( Credentials(user_password, credentials_name, (create_generated_password(credentials_name)) ) )
+                        save_credentials( Credentials(user_name, credentials_name, (create_generated_password(credentials_name)) ) )
                         print("\n")
                         print(f"Credentials for {credentials_name} have been created and saved 📁")
                         print("\n")
@@ -284,7 +281,7 @@ def main():
 
                         if check_existing_credentials(delete_credentials):
                             delete_credentials = check_existing_credentials(delete_credentials)
-                            print(f"{delete_credentials.user_name} {delete_credentials.credentials_name}")
+                            print(f" {delete_credentials(credentials_name)}")
                             print(f"The credentials {credentials_name} has been deleted permanently🚮")
 
 
