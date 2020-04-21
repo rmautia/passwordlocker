@@ -1,5 +1,4 @@
 import unittest
-import pyperclip
 from credentials import Credentials # impoting the credentials class 
 
 class User:

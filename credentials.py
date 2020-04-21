@@ -34,11 +34,11 @@ class Credentials:
         """
         method through which the application saves the user credentials to credentials list
         """
-        credentials.credentials_list.append(self)
+        Credentials.credentials_list.append(self)
         
     #generating password for the user 
     @classmethod
-    def generate_password(cls):
+    def generated_password(cls):
         """
         this method will generate a random alphanumeric password for the user 
         """
@@ -66,12 +66,12 @@ class Credentials:
         
         for credentials in cls.credentials_list:
             if credentials.user_password == password:
-                user_credentials_list.append(credential)
+                user_credentials_list.append(credentials)
 
         return user_credentials_list
 
     @classmethod
-    def credentials_exist(cls, name):
+    def credentials_exists(cls, name):
         """
         method to check existense of a credentials
         
@@ -89,22 +89,13 @@ class Credentials:
         return False 
 
     # deleting credentials
-    @classmethod
     def delete_credentials(self):
         """
         method that deletes credentials account that user no longder needs
         """
-        Credentials.credentials_name.remove(self)
+        Credentials.credentials_list.remove(self)
 
-    # paste with pyperclip
-    @classmethod
-    def copy_credentials_email(self):
-        """
-        method to copy credentials email to the clipboard
-        """
-        credentials_name = credentials.credentials_exists()
-        pyperclip.copy(credentials_name.credentials_email)
-
+    
 
 
 if __name__ == '__main__':

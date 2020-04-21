@@ -14,13 +14,13 @@ class TestCredentials(unittest.TestCase):
         set up method will run before each test case
         """
         # creating the credential object
-        self.new_credentials = credentials("pete","gmail","yahoo","gmail08")
+        self.new_credentials = Credentials("pete","gmail","yahoo","gmail08")
 
     def tearDown(self):
         """
         the tearDown method will help to clean up after every test case is run 
         """
-        credentials.credentials_list = []
+        Credentials.credentials_list = []
 
     def test_init(self):
         """
@@ -28,15 +28,15 @@ class TestCredentials(unittest.TestCase):
         """
         self.assertEqual( self.new_credentials.user_password, "pete")
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
-        self.assertEqual( self.new_credentials.Credentials_email, "yahoo")
-        self.assertEqual( self.new_credentials.credentials.credentials_password, "gmail08")
+        self.assertEqual( self.new_credentials.credentials_email, "yahoo")
+        self.assertEqual( self.new_credentials.credentials_password, "gmail08")
 
     def test_save_credentials(self):
         """
         test to see whether user is saved to user list
         """
         
-        self.new_credentials.test_save_credentials()
+        self.new_credentials.save_credentials()
 
         self.assertEqual( len(Credentials.credentials_list), 1)
 
@@ -84,23 +84,18 @@ class TestCredentials(unittest.TestCase):
         self.assertTrue(credentials_exists)
 
     # deleting a credentials account
-    def test_delete_credentials():
+    def test_delete_credentials(self):
         """
         this method enables user to remove credentils the he/she no longer needs
         """
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("john","outlook","yahoo","outlook12") #new credentials
-        test_credentials.save_credentials
+        test_credentials = Credentials("Test","outlook","yahoo","outlook12") #new credentials
+        test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials() #deleting credentials account
-        self.assertEqual( len(Credentials.credentials_list,),1)
+        self.assertEqual( len(Credentials.credentials_list),1)
 
-    #pyperclip function to copy email
-    def test_copy_credentials_email():
-        """
-        function that copy email address from a found credentials
-        """
-        return Credentials.copy_credentials_email()
-
-    
+        
+if __name__ == '__main__':
+    unittest.main()
