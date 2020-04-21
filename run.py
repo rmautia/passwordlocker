@@ -100,7 +100,7 @@ def display_credentials(password):
     Function that returns all the saved credentials
     '''
 
-    return Credential.display_credential(password)
+    return Credentials.display_credentials(password)
 
 def create_generated_password(name):
     '''
@@ -109,9 +109,17 @@ def create_generated_password(name):
     Args:
         name : the name of the account
     '''
-    password = Credentials.generate_password()
+    password = Credentials.generated_password()
 
     return password
+def delete_credentials(name):
+    """"
+    Function to delete credentials no longer required
+    
+    Args:
+        name : the name of the credentials
+    """
+    Delete = Credentials.delete_credentials()
 
 # main function
 def main():
@@ -203,7 +211,6 @@ def main():
         cc - add credentials  \n
         dc - display credentials \n
         gc - generate a credentials with autogenerate password \n
-        ce - copy email of existing credentials \n
         dlc - delete credentials \n
         ext - exit credentials """)
 
@@ -222,14 +229,11 @@ def main():
                         print("Name of the credentials ...")
                         credentials_name = input()
 
-                        print("Email link of the credentials ...")
-                        Credentials_email = input()
-
                         print("Password of the credentials ...")
                         credentials_password = input()
     
                         # creating and saving a new user
-                        save_credentials ( create_credentials(user_password, credentials_name, Credentials_email, credentials_password))
+                        save_credentials ( create_credentails(credentials_name, credentials_password) )
 
                         print("\n")
                         print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
@@ -265,8 +269,9 @@ def main():
                         print("Name of the credentials ...")
                         credentials_name = input()
 
+
                         # Save created credential with its generated password
-                        save_credentials( Credentials(user_password, credentials_name, Credentials_email, (create_generated_password(credentials_name)) ) )
+                        save_credentials( Credentials(user_password, credentials_name, (create_generated_password(credentials_name)) ) )
                         print("\n")
                         print(f"Credentials for {credentials_name} have been created and saved 📁")
                         print("\n")
@@ -278,10 +283,10 @@ def main():
                         print("enter name of credentials you no longer need")
 
                         delete_credentials = input()
-                        if check_credentials_exists(delete_credentials):
-                            delete_credentials = find_credentials(delete_credentials)
+                        if credentials_exist(delete_credentials):
+                            delete_credentials = credentials_exist(delete_credentials)
                             print(f"{delete_credentials.user_name} {delete_credentials.user_password}")
-                            print(f"The credentials {user_name} {credentials_name} has been deleted 🚮")
+                            print(f"The credentials {credentials_name} has been deleted permanently🚮")
 
 
                     elif short_code == "ext":

@@ -14,7 +14,7 @@ class TestCredentials(unittest.TestCase):
         set up method will run before each test case
         """
         # creating the credential object
-        self.new_credentials = Credentials("pete","gmail","yahoo","gmail08")
+        self.new_credentials = Credentials("pete","gmail","gmail08")
 
     def tearDown(self):
         """
@@ -28,7 +28,6 @@ class TestCredentials(unittest.TestCase):
         """
         self.assertEqual( self.new_credentials.user_password, "pete")
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
-        self.assertEqual( self.new_credentials.credentials_email, "yahoo")
         self.assertEqual( self.new_credentials.credentials_password, "gmail08")
 
     def test_save_credentials(self):
@@ -57,11 +56,11 @@ class TestCredentials(unittest.TestCase):
         #saving the new credentials 
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("john", "outlook","yahoo", "outlook12")
+        test_credentials = Credentials("john", "outlook", "outlook12")
 
         test_credentials.save_credentials()
 
-        test_credentials = Credentials("john", "glassdoor","yahoo","glassy05")
+        test_credentials = Credentials("john", "glassdoor","glassy05")
 
         test_credentials.save_credentials()
 
@@ -74,7 +73,7 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("john","outlook","yahoo","outlook12") # new credentials
+        test_credentials = Credentials("john","outlook","outlook12") # new credentials
 
         test_credentials.save_credentials()
 
@@ -90,7 +89,7 @@ class TestCredentials(unittest.TestCase):
         """
 
         self.new_credentials.save_credentials()
-        test_credentials = Credentials("Test","outlook","yahoo","outlook12") #new credentials
+        test_credentials = Credentials("Test","outlook","outlook12") #new credentials
         test_credentials.save_credentials()
 
         self.new_credentials.delete_credentials() #deleting credentials account

@@ -15,19 +15,17 @@ class Credentials:
     # start 
     credentials_list = [] # Empty list of the credentials
 
-    def __init__(self, user_password, credentials_name,credentials_email, credentials_password):
+    def __init__(self, user_password, credentials_name, credentials_password):
         """
         __init__ method to  specify the attributes of a User object
         
         Args:
             user_password = user password
             credentials_name = the name of the credentials acccount
-            credentials_email = the email of the credentials account to be linked with the account
             credentials_password = the password of the account
         """
         self.user_password = user_password
         self.credentials_name = credentials_name
-        self.credentials_email = credentials_email
         self.credentials_password = credentials_password
 
     def save_credentials(self):
