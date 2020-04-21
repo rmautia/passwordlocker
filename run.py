@@ -61,19 +61,19 @@ def display_users():
 
     return User.display_user()
 
-def create_credentail(user_password, name, password):
+def create_credentails(user_name, name, password):
     '''
     Function to create a credential 
 
     Args:
-        user_password : the password for Password Locker
+        user_name : username for Password Locker
         name : the name of the account 
         password : the password for the account
     '''
 
-    new_credentail = Credential(user_password,name,password)
+    new_credentails = Credentials(user_name,name,password)
 
-    return new_credentail
+    return new_credentails
 
 def save_credentials(credentials):
     '''
@@ -93,7 +93,7 @@ def check_existing_credentials(name):
         name : the credentials name
     '''
 
-    return Credentials.credentials_exist(name)
+    return Credentials.credentials_exists(name)
 
 def display_credentials(password):
     '''
@@ -137,7 +137,6 @@ def main():
         cu - create a password Locker account \n
         du - display names of current password locker users \n
         lg - log into your account on password locker \n
-        dlc - delete a password locker account you no longer need \n
         ex - exit the password locker account """)
 
         # taking short codes from the user
@@ -224,7 +223,7 @@ def main():
                         print("-"*10)
 
                         print("User password ...")
-                        user_password = input()
+                        user_name = input()
 
                         print("Name of the credentials ...")
                         credentials_name = input()
@@ -233,7 +232,7 @@ def main():
                         credentials_password = input()
     
                         # creating and saving a new user
-                        save_credentials ( create_credentails(credentials_name, credentials_password) )
+                        save_credentials (create_credentails(user_name, credentials_name, credentials_password) )
 
                         print("\n")
                         print(f"Credentials for {credentials_name} have been recorded and saved 🏆")
@@ -283,9 +282,9 @@ def main():
                         print("enter name of credentials you no longer need")
 
                         delete_credentials = input()
-                        if credentials_exist(delete_credentials):
-                            delete_credentials = credentials_exist(delete_credentials)
-                            print(f"{delete_credentials.user_name} {delete_credentials.user_password}")
+                        if check_existing_credentials(delete_credentials):
+                            delete_credentials = credentials_exists(delete_credentials)
+                            print(f"{delete_credentials.user_name} {delete_credentials.credentials_name}")
                             print(f"The credentials {credentials_name} has been deleted permanently🚮")
 
 

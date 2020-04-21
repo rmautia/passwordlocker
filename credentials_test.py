@@ -26,7 +26,7 @@ class TestCredentials(unittest.TestCase):
         """
         testcase: testing to see whether object is well initialised
         """
-        self.assertEqual( self.new_credentials.user_password, "pete")
+        self.assertEqual( self.new_credentials.user_name, "pete")
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
         self.assertEqual( self.new_credentials.credentials_password, "gmail08")
 

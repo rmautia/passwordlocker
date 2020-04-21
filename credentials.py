@@ -15,16 +15,16 @@ class Credentials:
     # start 
     credentials_list = [] # Empty list of the credentials
 
-    def __init__(self, user_password, credentials_name, credentials_password):
+    def __init__(self, user_name, credentials_name, credentials_password):
         """
         __init__ method to  specify the attributes of a User object
         
         Args:
-            user_password = user password
+            user_name = user name
             credentials_name = the name of the credentials acccount
             credentials_password = the password of the account
         """
-        self.user_password = user_password
+        self.user_password = user_name
         self.credentials_name = credentials_name
         self.credentials_password = credentials_password
 
@@ -87,6 +87,7 @@ class Credentials:
         return False 
 
     # deleting credentials
+    @classmethod
     def delete_credentials(self):
         """
         method that deletes credentials account that user no longder needs
